@@ -1,0 +1,152 @@
+[
+  {
+    "id": "1",
+    "name": "Hotel secreto 1",
+    "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no centro da capital Gaúcha, contando com fácil acesso a diversos serviços e pontos de lazer.",
+    "parkingIncluded": false,
+    "rating": 3.6,
+    "address": {
+      "streetAddress": "Rua Demétrio Ribeiro 102",
+      "city": "Porto Alegre",
+      "stateProvince": "RS",
+      "postalCode": "90010310",
+      "country": "BR"
+    },
+    "location": {
+      "type": "Point",
+      "coordinates": [-30.0360389,-51.234254]
+    },
+    "rooms": [
+      {
+        "description": "Quarto simples, 1 cama grande",
+        "type": "small",
+        "baseRate": 96.99,
+        "bedOptions": "1 cama grande",
+        "sleepsCount": 2,
+        "smokingAllowed": true
+      },
+      {
+        "description": "Quarto grande, 2 camas grandes",
+        "type": "big",
+        "baseRate": 146.99,
+        "bedOptions": "2 camas grande",
+        "sleepsCount": 4,
+        "smokingAllowed": true
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Hotel secreto 2",
+    "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no sul da capital Gaúcha, contando com ótimas opções de restaurantes e pontos de lazer.",
+    "parkingIncluded": true,
+    "rating": 4.6,
+    "address": {
+      "streetAddress": "Rua Manoel Leão 90",
+      "city": "Porto Alegre",
+      "stateProvince": "RS",
+      "postalCode": "91760-000",
+      "country": "BR"
+    },
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -30.13208645819451,
+        -51.239964628045264]
+    },
+    "rooms": [
+      {
+        "description": "Quarto roots, 1 cama solteiro",
+        "type": "prettysmall",
+        "baseRate": 46.99,
+        "bedOptions": "1 cama solteiro",
+        "sleepsCount": 1,
+        "smokingAllowed": true
+      },
+      {
+        "description": "Quarto médio, 2 camas solteiro",
+        "type": "medium",
+        "baseRate": 76.99,
+        "bedOptions": "2 camas solteiro",
+        "sleepsCount": 2,
+        "smokingAllowed": true
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Hotel secreto 3",
+    "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no norte da capital Gaúcha, contando com ótimas opções de festas e pontos de lazer.",
+    "parkingIncluded": true,
+    "rating": 3.0,
+    "address": {
+      "streetAddress": "Rua João Pereira dos Santos 34",
+      "city": "Porto Alegre",
+      "stateProvince": "RS",
+      "postalCode": "91240-100",
+      "country": "BR"
+    },
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -30.0124962,
+        -51.1159263]
+    },
+    "rooms": [
+      {
+        "description": "Quarto médio, 1 cama casal",
+        "type": "medium",
+        "baseRate": 66.20,
+        "bedOptions": "1 cama casal",
+        "sleepsCount": 2,
+        "smokingAllowed": false
+      },
+      {
+        "description": "Quarto médio-grande, 1 cama king",
+        "type": "big",
+        "baseRate": 96.99,
+        "bedOptions": "1 cama king",
+        "sleepsCount": 2,
+        "smokingAllowed": false
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Hotel secreto 4",
+    "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no lesta da capital Gaúcha, contando com ótimas opções de delivery e pontos de lazer.",
+    "parkingIncluded": false,
+    "rating": 4.3,
+    "address": {
+      "streetAddress": "Rua João de Oliveira Remião",
+      "city": "Porto Alegre",
+      "stateProvince": "RS",
+      "postalCode": "91550-300",
+      "country": "BR"
+    },
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        30.080345153808594,
+        51.13163757324219]
+    },
+    "rooms": [
+      {
+        "description": "Quarto gigante, 2 camas king",
+        "type": "verybig",
+        "baseRate": 108.99,
+        "bedOptions": "2 camas king",
+        "sleepsCount": 4,
+        "smokingAllowed": true
+      },
+      {
+        "description": "Quarto pequeno, 1 cama solteiro",
+        "type": "small",
+        "baseRate": 888.99,
+        "bedOptions": "1 cama solteiro",
+        "sleepsCount": 1,
+        "smokingAllowed": true
+      }
+    ]
+  }
+]
