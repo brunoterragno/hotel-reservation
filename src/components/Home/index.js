@@ -1,15 +1,24 @@
 import React from 'react';
-import { HomeContainer, Banner } from './style';
-import background from '../../assets/img/background.png';
+import { HomeContainer } from './style';
+import Banner from '../Banner';
+import Info from '../Info';
+import Sidebar from '../Sidebar';
+import CardContainer from '../CardContainer';
 
 const Home = () => {
   return (
     <HomeContainer>
       <div style={{ maxWidth: 1080 }}>
-        <Banner>
-          <img src={background} alt='' />
-          <h3>Vacation or Travel Remember Hotel.com</h3>
-        </Banner>
+        <Banner />
+      </div>
+      <div>
+        <Info />
+      </div>
+      <div style={{ maxWidth: 1080, marginTop: 30, marginBottom: 30 }}>
+        <Sidebar />
+      </div>
+      <div style={{ maxWidth: '120rem' }}>
+        <CardContainer />
       </div>
     </HomeContainer>
   );
