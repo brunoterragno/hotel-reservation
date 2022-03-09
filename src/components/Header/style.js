@@ -7,6 +7,7 @@ export const HeaderContainer = styled.header`
   max-width: 120rem;
   margin: 0 auto;
   height: 5rem;
+  padding: 0 1rem;
 
   h1 {
     font-weight: 700;
@@ -26,8 +27,13 @@ export const Links = styled.nav`
     min-width: 8rem;
     text-align: center;
     text-transform: capitalize;
-    text-decoration: none;
     color: #000;
+  }
+
+  @media (max-width: 740px) {
+    a {
+      display: none;
+    }
   }
 `;
 
@@ -39,5 +45,4 @@ export const BtnLogin = styled.button`
   font-size: 1.4rem;
   font-weight: 700;
   color: #fff;
-  cursor: pointer;
 `;

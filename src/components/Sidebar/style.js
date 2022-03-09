@@ -8,9 +8,22 @@ export const NavBar = styled.div`
 
   & h3 {
     font-size: 2.3rem;
-    width: 32rem;
+    max-width: 32rem;
     letter-spacing: 0.1rem;
     word-spacing: 0.3rem;
+    margin-right: 1rem;
+  }
+
+  @media (max-width: 580px) {
+    & h3 {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 470px) {
+    & h3 {
+      max-width: 20rem;
+      font-size: 1.8rem;
+    }
   }
 `;
 
@@ -23,7 +36,6 @@ export const Btn = styled.button`
   align-items: center;
   justify-content: center;
   background: #fff;
-  cursor: pointer;
 
   &:first-of-type {
     margin-right: 2rem;
@@ -36,5 +48,11 @@ export const Btn = styled.button`
 
   &:active svg {
     color: #64c9cf;
+  }
+
+  @media (max-width: 470px) {
+    &:first-of-type {
+      margin-right: 1rem;
+    }
   }
 `;
