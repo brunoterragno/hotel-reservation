@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NavBar = styled.nav`
+export const NavBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,7 +8,9 @@ export const NavBar = styled.nav`
 
   & h3 {
     font-size: 2.3rem;
-    width: 25rem;
+    width: 32rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.3rem;
   }
 `;
 

@@ -4,25 +4,34 @@ export const InfoSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
-  background: rgba(100, 201, 207, 0.1);
+  max-width: 1080px;
   height: 12rem;
-  margin-top: 8rem;
+  margin: 8rem auto;
+
+  & > h3 {
+    font-weight: normal;
+    width: 35rem;
+    font-size: 2.3rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.3rem;
+  }
+`;
+
+export const InfoNum = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: end;
 
   & > div {
-    max-width: 120rem;
     text-align: center;
     font-weight: 700;
   }
 
-  & > h3 {
-    font-weight: normal;
-    width: 25rem;
-    font-size: 2.3rem;
+  & > div:last-of-type {
+    margin-left: 20rem;
   }
 
   & > div p {
-    font-weight: 700;
     font-size: 5rem;
     line-height: 4rem;
   }

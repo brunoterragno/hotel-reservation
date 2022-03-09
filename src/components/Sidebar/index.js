@@ -5,7 +5,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 const Sidebar = () => {
   return (
     <NavBar>
-      <h3>Berikut Hotel Rekomandasi Kami</h3>
+      <h3>Here Are Our Recommended Hotels</h3>
       <div>
         <Btn>
           <AiOutlineArrowLeft />
