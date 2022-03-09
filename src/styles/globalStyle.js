@@ -11,6 +11,7 @@ export default createGlobalStyle`
     html {
         min-height: 100vh;
         font-size: 62.5%;
+        overflow-x: hidden;
     }
 
     body {

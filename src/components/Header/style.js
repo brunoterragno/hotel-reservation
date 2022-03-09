@@ -39,4 +39,5 @@ export const BtnLogin = styled.button`
   font-size: 1.4rem;
   font-weight: 700;
   color: #fff;
+  cursor: pointer;
 `;
