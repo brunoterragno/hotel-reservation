@@ -46,6 +46,14 @@ export const BannerContainer = styled.div`
   }
 
   @media (max-width: 580px) {
+    height: 20rem;
+
+    h3 {
+      font-size: 2.5rem;
+      max-width: 27rem;
+      margin-right: auto;
+    }
+
     img {
       display: none;
     }
@@ -66,10 +74,14 @@ export const Detail = styled.div`
 
   @media (max-width: 860px) {
     top: 10rem;
-    right: 5rem;
   }
 
   @media (max-width: 580px) {
     opacity: 0.2;
+    top: 3rem;
+
+    svg {
+      font-size: 15rem;
+    }
   }
 `;

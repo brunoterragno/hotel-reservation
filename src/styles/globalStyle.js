@@ -17,6 +17,7 @@ export default createGlobalStyle`
     body {
         font-size: 1.6rem;
         font-family: 'Poppins', sans-serif;
+        min-width: 320px;
     }
 
     a {

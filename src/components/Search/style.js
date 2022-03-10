@@ -26,6 +26,17 @@ export const SearchContainer = styled.nav`
     justify-items: center;
     justify-content: center;
   }
+
+  @media (max-width: 720px) {
+    position: relative;
+    right: 0;
+    height: 22rem;
+    left: 0;
+    bottom: -3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5fr;
+    box-shadow: none;
+  }
 `;
 
 export const SearchContent = styled.div`
@@ -48,13 +59,15 @@ export const SearchContent = styled.div`
   & > select {
     width: 100%;
     padding: 0.3rem 0;
+    text-align: center;
     border: none;
     cursor: pointer;
   }
 
   & > input {
     width: 100%;
-    padding: 0.2rem 0;
+    padding: 0.1rem 0;
+    text-align: center;
     border: none;
     cursor: pointer;
   }
@@ -112,5 +125,10 @@ export const BtnSearch = styled.button`
     grid-column-end: 5;
     height: 3rem;
     width: 80%;
+  }
+
+  @media (max-width: 720px) {
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 `;

@@ -1,16 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HeaderContainer, Links, BtnLogin } from './style';
+import { FaConciergeBell, FaHome, FaHotel } from 'react-icons/fa';
+import { GrMail } from 'react-icons/gr';
 
 const Header = () => {
   return (
     <HeaderContainer>
       <h1>Hotel.com</h1>
       <Links>
-        <Link to='#'>home</Link>
-        <Link to='#'>about us</Link>
-        <Link to='#'>pricing</Link>
-        <Link to='#'>contact</Link>
+        <Link to='#'>
+          <button>
+            <FaHome />
+          </button>
+          <h2>Home</h2>
+        </Link>
+        <Link to='#'>
+          <button>
+            <FaHotel />
+          </button>
+          <h2>about us</h2>
+        </Link>
+        <Link to='#'>
+          <button>
+            <FaConciergeBell />
+          </button>
+          <h2>services</h2>
+        </Link>
+        <Link to='#'>
+          <button>
+            <GrMail />
+          </button>
+          <h2>contact</h2>
+        </Link>
       </Links>
       <BtnLogin>Login</BtnLogin>
     </HeaderContainer>
