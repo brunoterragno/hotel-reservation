@@ -4,6 +4,7 @@
     "name": "Hotel secreto 1",
     "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no centro da capital Gaúcha, contando com fácil acesso a diversos serviços e pontos de lazer.",
     "parkingIncluded": false,
+    "services": ["internet", "sala de jogos"],
     "rating": 3.6,
     "address": {
       "streetAddress": "Rua Demétrio Ribeiro 102",
@@ -40,6 +41,7 @@
     "name": "Hotel secreto 2",
     "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no sul da capital Gaúcha, contando com ótimas opções de restaurantes e pontos de lazer.",
     "parkingIncluded": true,
+    "services": ["internet", "tv a cabo"],
     "rating": 4.6,
     "address": {
       "streetAddress": "Rua Manoel Leão 90",
@@ -78,6 +80,7 @@
     "name": "Hotel secreto 3",
     "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no norte da capital Gaúcha, contando com ótimas opções de festas e pontos de lazer.",
     "parkingIncluded": true,
+    "services": ["internet", "piscina"],
     "rating": 3.0,
     "address": {
       "streetAddress": "Rua João Pereira dos Santos 34",
@@ -116,6 +119,7 @@
     "name": "Hotel secreto 4",
     "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no lesta da capital Gaúcha, contando com ótimas opções de delivery e pontos de lazer.",
     "parkingIncluded": false,
+    "services": ["internet", "quadra de basquete"],
     "rating": 4.3,
     "address": {
       "streetAddress": "Rua João de Oliveira Remião",
