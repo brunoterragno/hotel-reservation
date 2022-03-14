@@ -5,13 +5,12 @@ export const CardContainer = styled.div`
   align-items: flex-start;
   flex-direction: column;
   position: relative;
-  width: 26rem;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  max-width: 26rem;
+  border-radius: 2rem;
   box-shadow: 0 0.3rem 1.5rem rgba(0, 0, 0, 0.25);
 
   & > img {
-    width: 26rem;
+    width: 100%;
     object-fit: contain;
   }
 
@@ -33,5 +32,9 @@ export const CardContainer = styled.div`
     right: 2rem;
     color: #64c9cf;
     font-size: 2rem;
+  }
+
+  @media (max-width: 860px) {
+    max-width: 100%;
   }
 `;
