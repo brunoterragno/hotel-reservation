@@ -24,7 +24,7 @@ app.get('/hotels/:id', (req, res) => {
   res.status(hotel ? 200 : 404).send(hotel);
 });
 
-app.post('/user/login', (req, res) => {
+app.post('/users/login', (req, res) => {
   const user = users.find(
     (user) => user.username === req.body.username && user.password === req.body.password
   );
@@ -35,14 +35,15 @@ app.post('/user/login', (req, res) => {
   }
 });
 
-app.get('/user/bookings', (req, res) => {
+app.get('/users/bookings', (req, res) => {
   const user = users.find(
     (user) => user.token === req.headers["authorization"]
   );
   if (!user) {
     res.status(401).send('Invalid token');
   } else {
-    const bookingList = bookings.find(booking =>  booking.user_id === user.id);
+    console.log(user);
+    const bookingList = bookings.find(booking => booking.user_id === user.id);
     res.send(bookingList);
   }
 });
