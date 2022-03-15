@@ -36,3 +36,43 @@ Returns a list of hotels based on filter params (not ready).
 
 [http://localhost:3009/hotels/1](http://localhost:3009/hotels/1)
 Returns a list of hotels based on hotel id.
+
+[http://localhost:3009/users/login](http://localhost:3009/users/login)
+Log in the user
+Example:
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "username": "user1@gmail.com",
+  "password": "!Testing123"
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://localhost:3009/users/login", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+[http://localhost:3009/users/bookings](http://localhost:3009/users/bookings)
+Returns a list of bookings for that user
+Example
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "4qse8eqw7d89wq94wd");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("http://localhost:3009/users/bookings", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
