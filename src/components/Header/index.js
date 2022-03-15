@@ -9,7 +9,7 @@ const Header = () => {
     <HeaderContainer>
       <h1>Hotel.com</h1>
       <Links>
-        <Link to='#'>
+        <Link to='/'>
           <button>
             <FaHome />
           </button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SearchContainer, SearchContent, SvgBck, BtnSearch } from './style';
 import {
   RiMapPin2Fill,
@@ -8,7 +9,9 @@ import {
   RiSearch2Line,
 } from 'react-icons/ri';
 
-const Search = () => {
+const SearchBar = () => {
+  const navigate = useNavigate();
+
   return (
     <SearchContainer>
       <SearchContent>
@@ -17,7 +20,7 @@ const Search = () => {
         </SvgBck>
         <h3>Location</h3>
         <select>
-          <option>teste</option>
+          <option>Porto Alegre</option>
         </select>
       </SearchContent>
       <SearchContent>
@@ -46,7 +49,7 @@ const Search = () => {
           <option>4 room</option>
         </select>
       </SearchContent>
-      <BtnSearch>
+      <BtnSearch onClick={() => navigate('/search')}>
         <RiSearch2Line style={{ color: 'white' }} />
         Search
       </BtnSearch>
@@ -54,4 +57,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchBar;

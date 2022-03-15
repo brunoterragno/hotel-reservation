@@ -8,33 +8,47 @@ export const CardContainer = styled.div`
   max-width: 26rem;
   border-radius: 2rem;
   box-shadow: 0 0.3rem 1.5rem rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 
   & > img {
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
   }
 
   & > h4 {
     padding: 0.5rem 1rem;
+    font-size: 1.8rem;
   }
 
-  & > p {
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     padding: 1rem;
-    letter-spacing: 0.3rem;
-    font-weight: 700;
-    font-size: 2rem;
-  }
+    padding-top: 0;
 
-  & > span {
-    position: absolute;
-    bottom: 0;
-    padding: 1.2rem;
-    right: 2rem;
-    color: #64c9cf;
-    font-size: 2rem;
+    & > p {
+      letter-spacing: 0.3rem;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    & > span {
+      right: 2rem;
+      color: #64c9cf;
+      font-size: 2rem;
+    }
   }
 
   @media (max-width: 860px) {
     max-width: 100%;
   }
+`;
+
+export const PopupConatiner = styled.div`
+  position: relative;
+  top: 100%;
+  margin: 0 auto;
 `;

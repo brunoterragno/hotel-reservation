@@ -1,23 +1,26 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 3009;
 
-const hotels = require("./hotels.json");
+const cors = require('cors');
+app.use(cors());
 
-app.get("/", (req, res) => {
-    res.send("Hotel reservation api");
+const hotels = require('./hotels.json');
+
+app.get('/', (req, res) => {
+  res.send('Hotel reservation api');
 });
-  
-app.get("/hotels/offers", (req, res) => {
+
+app.get('/hotels/offers', (req, res) => {
   res.send(hotels.slice(0, 4));
 });
 
-app.get("/hotels/search", (req, res) => {
-    res.send(hotels);
+app.get('/hotels/search', (req, res) => {
+  res.send(hotels);
 });
 
-app.get("/hotels/:id", (req, res) => {
-  const hotel = hotels.find(hotel => hotel.id === req.params.id);
+app.get('/hotels/:id', (req, res) => {
+  const hotel = hotels.find((hotel) => hotel.id === req.params.id);
   res.status(hotel ? 200 : 404).send(hotel);
 });
 
