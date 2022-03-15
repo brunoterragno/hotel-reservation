@@ -1,24 +1,50 @@
-const express = require("express");
+const express = require('express');
+const hotels = require('./hotels.json');
+const users = require('./users.json');
+const bookings = require('./bookings.json');
 const app = express();
 const port = 3009;
 
-const hotels = require("./hotels.json");
+app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("Hotel reservation api");
+app.get('/', (req, res) => {
+  res.send('Hotel reservation api');
 });
-  
-app.get("/hotels/offers", (req, res) => {
+
+app.get('/hotels/offers', (req, res) => {
   res.send(hotels.slice(0, 4));
 });
 
-app.get("/hotels/search", (req, res) => {
-    res.send(hotels);
+app.get('/hotels/search', (req, res) => {
+  res.send(hotels);
 });
 
-app.get("/hotels/:id", (req, res) => {
-  const hotel = hotels.find(hotel => hotel.id === req.params.id);
+app.get('/hotels/:id', (req, res) => {
+  const hotel = hotels.find((hotel) => hotel.id === req.params.id);
   res.status(hotel ? 200 : 404).send(hotel);
+});
+
+app.post('/user/login', (req, res) => {
+  const user = users.find(
+    (user) => user.username === req.body.username && user.password === req.body.password
+  );
+  if (!user) {
+    res.status(401).send('Username or password does not match');
+  } else {
+    res.send({ ...user, password: '' });
+  }
+});
+
+app.get('/user/bookings', (req, res) => {
+  const user = users.find(
+    (user) => user.token === req.headers["authorization"]
+  );
+  if (!user) {
+    res.status(401).send('Invalid token');
+  } else {
+    const bookingList = bookings.find(booking =>  booking.user_id === user.id);
+    res.send(bookingList);
+  }
 });
 
 app.listen(port, () => {
