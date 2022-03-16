@@ -16,7 +16,7 @@ export const PopupContainer = styled.div`
   & > div {
     position: relative;
     width: 70rem;
-    max-height: 80%;
+    max-height: 85%;
     display: flex;
 
     @media (max-width: 860px) {
@@ -169,6 +169,7 @@ export const HotelDescription = styled.div`
 
     & > p {
       margin-top: 0;
+      margin-right: 1rem;
     }
   }
 `;
@@ -184,8 +185,8 @@ export const Rooms = styled.ul`
     justify-content: space-between;
     padding: 1rem 0.5rem;
 
-    input {
-      margin-left: 1rem;
+    p {
+      margin-right: 2rem;
     }
   }
 `;

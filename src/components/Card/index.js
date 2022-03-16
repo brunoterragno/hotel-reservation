@@ -12,15 +12,6 @@ const Card = ({ data }) => {
     setIsOpen(true);
   }
 
-  // function mostra() {
-  //   let list = [];
-  //   const algo = data.forEach((hotel) => {
-  //     console.log(hotel.rooms);
-  //   });
-  // }
-
-  // console.log(mostra());
-
   return (
     <>
       {data.map((hotel) => {

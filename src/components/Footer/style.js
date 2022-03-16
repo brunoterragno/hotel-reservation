@@ -4,7 +4,6 @@ export const FooterContainer = styled.footer`
   max-width: 120rem;
   margin: 0 auto;
   padding: 2rem 1rem;
-  background: #f0eef0;
 `;
 
 export const MailContent = styled.div`

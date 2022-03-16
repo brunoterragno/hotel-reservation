@@ -15,9 +15,9 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 const Popup = ({ data, setIsOpen }) => {
-  const hotelList = data.map((el) => el.rooms);
+  const roomList = data.map((el) => el.rooms)[0];
   const [checkedState, setCheckedState] = useState(
-    new Array(hotelList[0].length).fill(false)
+    new Array(roomList.length).fill(false)
   );
 
   const [price, setPrice] = useState(0);
@@ -29,15 +29,17 @@ const Popup = ({ data, setIsOpen }) => {
       index === position ? !item : item
     );
     setCheckedState(updateCheckedValue);
+    setPrice(calculateRate(updateCheckedValue, roomList));
+  }
 
-    const rate = updateCheckedValue.reduce((sum, currentState, index) => {
+  const calculateRate = (value, roomList) => {
+    return value.reduce((sum, currentState, index) => {
       if (currentState === true) {
-        return sum + hotelList[0][index].baseRate;
+        return sum + roomList[index].baseRate;
       }
       return sum;
     }, 0);
-    setPrice(rate);
-  }
+  };
 
   return (
     <PopupContainer>
@@ -73,7 +75,7 @@ const Popup = ({ data, setIsOpen }) => {
                     {hotel.rooms.map(({ description }, index) => {
                       return (
                         <li key={index}>
-                          {description}
+                          <p>{description}</p>
                           <input
                             type='checkbox'
                             checked={checkedState[index]}
