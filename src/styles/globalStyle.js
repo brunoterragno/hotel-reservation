@@ -23,9 +23,10 @@ export default createGlobalStyle`
     a {
     text-decoration: none;
     outline: none;
+    }
 
     button {
         cursor: pointer;
     }
-}
+
 `;

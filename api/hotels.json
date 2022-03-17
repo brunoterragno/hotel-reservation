@@ -3,6 +3,7 @@
     "id": "1",
     "name": "Hotel secreto 1",
     "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no centro da capital Gaúcha, contando com fácil acesso a diversos serviços e pontos de lazer.",
+    "image": "https://i.pinimg.com/564x/8e/fb/64/8efb64c0206b1a96ff0ef5ab16f53345.jpg",
     "parkingIncluded": false,
     "services": ["internet", "sala de jogos"],
     "rating": 3.6,
@@ -40,6 +41,7 @@
     "id": "2",
     "name": "Hotel secreto 2",
     "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no sul da capital Gaúcha, contando com ótimas opções de restaurantes e pontos de lazer.",
+    "image": "https://media.architecturaldigest.com/photos/595f98b1fde163455758df41/master/w_2580%2Cc_limit/0208-AD-BAIR-13.jpg",
     "parkingIncluded": true,
     "services": ["internet", "tv a cabo"],
     "rating": 4.6,
@@ -79,6 +81,7 @@
     "id": "3",
     "name": "Hotel secreto 3",
     "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no norte da capital Gaúcha, contando com ótimas opções de festas e pontos de lazer.",
+    "image": "https://media.architecturaldigest.com/photos/595f98b1c5ba1157bf2ba2f5/master/w_2580%2Cc_limit/0208-AD-BAIR-12.jpg",
     "parkingIncluded": true,
     "services": ["internet", "piscina"],
     "rating": 3.0,
@@ -118,6 +121,7 @@
     "id": "4",
     "name": "Hotel secreto 4",
     "description": "Este hotel é um dos melhores da cidade de Porto Alegre, estando localizado no lesta da capital Gaúcha, contando com ótimas opções de delivery e pontos de lazer.",
+    "image": "https://media.architecturaldigest.com/photos/595f98ae0f3eb15612a628d8/master/w_2580%2Cc_limit/0208-AD-BAIR-02.jpg",
     "parkingIncluded": false,
     "services": ["internet", "quadra de basquete"],
     "rating": 4.3,
@@ -131,8 +135,8 @@
     "location": {
       "type": "Point",
       "coordinates": [
-        30.080345153808594,
-        51.13163757324219]
+        -30.080345153808594,
+        -51.13163757324219]
     },
     "rooms": [
       {
@@ -146,7 +150,7 @@
       {
         "description": "Quarto pequeno, 1 cama solteiro",
         "type": "small",
-        "baseRate": 888.99,
+        "baseRate": 88.99,
         "bedOptions": "1 cama solteiro",
         "sleepsCount": 1,
         "smokingAllowed": true

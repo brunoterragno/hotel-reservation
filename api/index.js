@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const hotels = require('./hotels.json');
 const users = require('./users.json');
 const bookings = require('./bookings.json');
 const app = express();
 const port = 3009;
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {

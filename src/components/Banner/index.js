@@ -1,6 +1,6 @@
 import React from 'react';
 import { BannerContainer, Detail, BannerSection } from './style';
-import Search from '../Search';
+import SearchBar from '../SearchBar';
 import { SiCircle } from 'react-icons/si';
 import background from '../../assets/img/background.png';
 
@@ -14,7 +14,7 @@ const Banner = () => {
           <SiCircle />
         </Detail>
       </BannerContainer>
-      <Search />
+      <SearchBar />
     </BannerSection>
   );
 };
