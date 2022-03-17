@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "username": "user1@gmail.com",
+    "name": "Carlos Mello",
+    "password": "!Testing123",
+    "token": "4qse8eqw7d89wq94wd"
+  },
+  {
+    "id": "2",
+    "username": "user2@gmail.com",
+    "name": "Angela Mello",
+    "password": "!Testing123",
+    "token": "asease8ase8sad5464"
+  }
+]
