@@ -1,61 +1,63 @@
 import React, { useState } from 'react';
-import { LoginContainer, BtnClose, Content, Form, BtnUser } from './style';
+import { LoginContainer, BtnClose, Content, Form, ErrorMessage } from './style';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/user';
 
 const Login = ({ setIsOpen }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const { login, errorStatus, setErrorStatus, auth } = useContext(AuthContext);
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [newUser, setNewUser] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    login(username, password);
+
+    setUsername('');
+    setPassword('');
+  }
 
   return (
-    <LoginContainer>
-      <div>
-        <BtnClose onClick={() => setIsOpen(false)}>X</BtnClose>
-        <Content>
-          <span>Entrar ou Cadastrar usuário</span>
-          <h2>
-            Bem-vindo ao <span>Hotel.com</span>
-          </h2>
-          <Form>
-            <div>
-              {newUser && (
+    !auth && (
+      <LoginContainer>
+        <div>
+          <BtnClose onClick={() => setIsOpen(false)}>X</BtnClose>
+          <Content>
+            <span>Entrar ou Cadastrar usuário</span>
+            <h2>
+              Bem-vindo ao <span>Hotel.com</span>
+            </h2>
+            <Form
+              onSubmit={(e) => handleSubmit(e)}
+              onClick={() => setErrorStatus('')}
+            >
+              <div>
                 <label>
-                  Nome
+                  Email
                   <input
-                    type='text'
-                    placeholder='Nome'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    type='email'
+                    placeholder='nome@nome.com'
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </label>
-              )}
-              <label>
-                Email
-                <input
-                  type='text'
-                  placeholder='nome@nome.com'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </label>
-              <label>
-                Senha
-                <input
-                  type='password'
-                  placeholder='******'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </label>
-            </div>
-            <button>Enviar</button>
-          </Form>
-          <BtnUser onClick={() => setNewUser(!newUser)}>
-            {newUser ? 'Faça Login' : 'Cadastre-se'}
-          </BtnUser>
-        </Content>
-      </div>
-    </LoginContainer>
+                <label>
+                  Senha
+                  <input
+                    type='password'
+                    placeholder='******'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </label>
+              </div>
+              <button>Enviar</button>
+            </Form>
+            <ErrorMessage>{errorStatus}</ErrorMessage>
+          </Content>
+        </div>
+      </LoginContainer>
+    )
   );
 };
 

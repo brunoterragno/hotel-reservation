@@ -10,6 +10,7 @@ import {
   Rooms,
   HotelServices,
   HotelCalendar,
+  BtnReservation,
 } from './style';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -89,6 +90,7 @@ const Popup = ({ data, setIsOpen }) => {
                     <h4>Services included</h4>
                     <span>Algo</span>
                   </HotelServices>
+                  <BtnReservation>Reservar</BtnReservation>
                 </GridInfo>
               </div>
             </HotelSection>

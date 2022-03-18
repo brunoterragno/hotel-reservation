@@ -133,6 +133,15 @@ export const GridInfo = styled.div`
   @media (min-width: 861px) {
     align-items: center;
     justify-items: center;
+
+    & > div:first-of-type {
+      margin-right: 2rem;
+    }
+
+    button {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
   }
 
   @media (max-width: 860px) {
@@ -219,4 +228,18 @@ export const HotelCalendar = styled.div`
   .react-calendar__tile--now:hover {
     background: #8fc1d4;
   }
+`;
+
+export const BtnReservation = styled.button`
+  height: 3rem;
+  width: 50%;
+  align-self: center;
+  justify-self: center;
+  border-radius: 1rem;
+  background: #ff6584;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  margin-top: 1rem;
 `;

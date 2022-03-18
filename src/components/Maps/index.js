@@ -1,8 +1,14 @@
-import React from 'react';
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
-import { MapContainer } from './style';
+import React, { useState } from 'react';
+import {
+  GoogleMap,
+  useJsApiLoader,
+  Marker,
+  InfoWindow,
+} from '@react-google-maps/api';
+import { MapContainer, InfoAddress } from './style';
 
 const Map = ({ data }) => {
+  const [click, setClick] = useState(null);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API,
@@ -30,9 +36,23 @@ const Map = ({ data }) => {
                     className: 'marker-label',
                   },
                 }}
-              ></Marker>
+                onClick={() => setClick(hotel)}
+              />
             );
           })}
+
+          {click !== null && (
+            <InfoWindow
+              position={click.location}
+              onCloseClick={() => setClick(null)}
+            >
+              <InfoAddress>
+                <p>{click.name}</p>
+                <span>{click.address.streetAddress}</span>
+                <span>{click.address.postalCode}</span>
+              </InfoAddress>
+            </InfoWindow>
+          )}
         </GoogleMap>
       ) : (
         <></>

@@ -136,12 +136,14 @@ export const Form = styled.form`
   }
 `;
 
-export const BtnUser = styled.button`
+export const ErrorMessage = styled.button`
   align-self: center;
   padding-top: 2rem;
   bottom: 1rem;
-  width: 10rem;
+  color: #c10b0b;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.1rem;
   background: none;
   border: none;
-  border-bottom: 0.1rem solid #ccc;
 `;

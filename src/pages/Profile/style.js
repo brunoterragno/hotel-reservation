@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const ProfileContainer = styled.main`
   margin: 0 auto;
@@ -67,9 +67,11 @@ export const SideBar = styled.div`
     h2 {
       color: #64c9cf;
       font-weight: 500;
+      padding: 1rem 0;
     }
     span {
       font-weight: normal;
+      font-size: 1.4rem;
     }
   }
 
@@ -91,6 +93,14 @@ export const SideBar = styled.div`
   }
 `;
 
+const animate = keyframes`
+ 0% {
+  width: 0;
+} 100% {
+  width: 100%;
+}
+`;
+
 export const Reservations = styled.ul`
   display: flex;
   flex-direction: column;
@@ -109,49 +119,60 @@ export const Reservations = styled.ul`
     margin-bottom: 1rem;
     height: 15rem;
 
+    ${(props) =>
+      props.loading &&
+      css`
+        display: block;
+        background: linear-gradient(
+          90.36deg,
+          rgba(196, 196, 196, 0.38) 0.38%,
+          rgba(151, 151, 151, 0.87) 99.76%
+        );
+        animation: ${animate} 2s linear infinite alternate;
+      `}
+
     &:last-child {
       margin-bottom: 0;
     }
 
     img {
       max-width: 23rem;
-      min-height: 100%;
+      height: 100%;
       object-fit: cover;
     }
   }
 
-  @media (max-width: 860px) {
-    div:first-of-type {
-      flex-direction: column;
-      align-items: flex-start;
-      align-self: flex-start;
-      margin: 3rem 0;
-    }
-  }
-
   @media (max-width: 580px) {
-    img {
-      width: 16rem;
+    li {
+      flex-direction: column;
+      height: 25rem;
+
+      img {
+        height: 40%;
+        min-width: 100%;
+      }
+    }
+
+    span {
+      font-size: 1.4rem;
     }
   }
 `;
 
 export const LiContent = styled.div`
-  display: inline-flex;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   flex-wrap: nowrap;
-  align-items: center;
   width: 100%;
-  padding: 0 1rem;
+  height: 100%;
+  padding: 1rem;
+  position: relative;
 
   h3 {
     font-weight: 500;
-  }
-
-  p {
-    letter-spacing: 0.3rem;
-    font-weight: 700;
-    font-size: 2rem;
+    padding-bottom: 1rem;
   }
 `;
 
@@ -160,7 +181,7 @@ export const Options = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  bottom: 0.5rem;
+  top: 1rem;
   right: 1rem;
   width: 7rem;
   max-height: 7rem;
@@ -176,32 +197,28 @@ export const Options = styled.div`
   }
 `;
 
-export const PriceContent = styled.div`
+export const InfoRoom = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 12rem;
-  border-radius: 2rem;
-  border: 0.1rem solid #ccc;
-  padding: 2rem;
-  grid-column-start: 1;
-  grid-column-end: 2;
-
-  button {
-    padding: 1rem 3rem;
-    border: none;
-    border-radius: 1rem;
-    background: #64c9cf;
-    color: #fff;
-    font-weight: 700;
-    letter-spacing: 0.1rem;
-    width: 100%;
-  }
-`;
-
-export const Total = styled.div`
-  display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 1rem 0;
+  flex: 1;
+  min-width: 100%;
+
+  & > div {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 0.5rem;
+
+    p {
+      padding-right: 1rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    span {
+      font-weight: 300;
+      align-self: flex-end;
+    }
+  }
 `;
