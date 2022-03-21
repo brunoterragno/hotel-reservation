@@ -30,7 +30,10 @@ const Profile = () => {
           Authorization: user.token,
         },
       });
-      getHotelFullInfo(response.data);
+
+      response.data.forEach((info) => {
+        getHotelFullInfo(info);
+      });
     }
     getFromApi();
   }, [user]);
@@ -45,6 +48,7 @@ const Profile = () => {
         ...data,
       },
     ];
+
     setSelectHotel([response.data]);
     setUserReservation(userFullInfo);
     setLoadingPage(false);
