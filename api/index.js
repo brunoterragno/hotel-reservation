@@ -45,7 +45,7 @@ app.get('/users/bookings', (req, res) => {
     res.status(401).send('Invalid token');
   } else {
     console.log(user);
-    const bookingList = bookings.find(booking => booking.user_id === user.id);
+    const bookingList = bookings.filter(booking => booking.user_id === user.id);
     res.send(bookingList);
   }
 });
