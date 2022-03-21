@@ -12,20 +12,24 @@ const Card = ({ data, isLoading }) => {
     setIsOpen(true);
   }
 
+  function showPlaceholder() {
+    return [...Array(4)].map((e, i) => {
+      return (
+        <CardContainer
+          key={i}
+          style={{
+            background:
+              'linear-gradient(90.36deg, rgba(196, 196, 196, 0.38) 0.38%, rgba(151, 151, 151, 0.87) 99.76%)',
+          }}
+        ></CardContainer>
+      );
+    });
+  }
+
   return (
     <>
       {isLoading
-        ? [...Array(4)].map((e, i) => {
-            return (
-              <CardContainer
-                key={i}
-                style={{
-                  background:
-                    'linear-gradient(90.36deg, rgba(196, 196, 196, 0.38) 0.38%, rgba(151, 151, 151, 0.87) 99.76%)',
-                }}
-              ></CardContainer>
-            );
-          })
+        ? showPlaceholder()
         : data.map((hotel) => {
             return (
               <CardContainer key={hotel.id} onClick={() => setPopup(hotel.id)}>

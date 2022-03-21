@@ -30,12 +30,12 @@ const Profile = () => {
           Authorization: user.token,
         },
       });
-      getHotelList(response.data);
+      getHotelFullInfo(response.data);
     }
     getFromApi();
   }, [user]);
 
-  async function getHotelList(data) {
+  async function getHotelFullInfo(data) {
     const response = await api.get(`hotels/${data.hotel_id}`);
     let userFullInfo = [
       {
