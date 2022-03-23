@@ -11,3 +11,13 @@ export const MapContainer = styled.div`
     border-radius: 1rem;
   }
 `;
+
+export const InfoAddress = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  p {
+    padding: 0.5rem 0;
+    font-weight: 500;
+  }
+`;

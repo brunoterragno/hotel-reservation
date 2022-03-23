@@ -9,11 +9,13 @@ import api from '../../services/api';
 
 const Home = () => {
   const [hotelList, setHotelList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function dataHotel() {
       const response = await api.get('/hotels/offers');
       setHotelList(response.data);
+      setIsLoading(false);
     }
     dataHotel();
   }, []);
@@ -30,7 +32,7 @@ const Home = () => {
         <Sidebar />
       </div>
       <div style={{ maxWidth: '120rem', marginBottom: 30 }}>
-        <CardContainer data={hotelList} />
+        <CardContainer data={hotelList} isLoading={isLoading} />
       </div>
       <h3>Why choose our services?</h3>
       <div style={{ maxWidth: '120rem', marginBottom: 70 }}>

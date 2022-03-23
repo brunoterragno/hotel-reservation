@@ -9,6 +9,7 @@ export const CardContainer = styled.div`
   border-radius: 2rem;
   box-shadow: 0 0.3rem 1.5rem rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  min-height: 25rem;
 
   & > img {
     width: 100%;

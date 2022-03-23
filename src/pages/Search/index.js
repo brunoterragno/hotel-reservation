@@ -9,14 +9,16 @@ const Search = () => {
   const [hotels, setHotels] = useState([]);
   const [mapview, setMapView] = useState(false);
   const [infoMap, setInfoMap] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function getFromApi() {
       const response = await api.get('hotels/search');
       let locationList = [];
-      response.data.forEach(({ name, location }) =>
+      response.data.forEach(({ name, address, location }) =>
         locationList.push({
           name,
+          address,
           location: {
             lat: location.coordinates[0],
             lng: location.coordinates[1],
@@ -25,6 +27,7 @@ const Search = () => {
       );
       setHotels(response.data);
       setInfoMap(locationList);
+      setIsLoading(false);
     }
     getFromApi();
   }, []);
@@ -36,16 +39,15 @@ const Search = () => {
       </div>
       <Content>
         <h2>Results for Porto Alegre - 12/3/22 to 14/3/22</h2>
-        <button onClick={() => setMapView(!mapview)}>
+        <button disabled={isLoading} onClick={() => setMapView(!mapview)}>
           {mapview ? 'View list' : 'View map'}
         </button>
       </Content>
-
       {mapview ? (
         <Maps data={infoMap} />
       ) : (
         <div style={{ margin: '2rem auto' }}>
-          <CardContainer data={hotels} />
+          <CardContainer data={hotels} isLoading={isLoading} />
         </div>
       )}
     </Container>

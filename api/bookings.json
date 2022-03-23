@@ -15,5 +15,22 @@
         "smokingAllowed": true
       }
     ]
+  },
+    {
+    "user_id": "1",
+    "hotel_id": "1",
+    "check_in": "16/03/2022",
+    "check_out": "17/03/2022",
+    "cost": "96.99",
+    "rooms": [
+      {
+        "description": "Quarto simples, 1 cama grande",
+        "type": "small",
+        "baseRate": 96.99,
+        "bedOptions": "1 cama grande",
+        "sleepsCount": 2,
+        "smokingAllowed": true
+      }
+    ]
   }
 ]
